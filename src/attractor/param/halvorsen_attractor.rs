@@ -44,14 +44,6 @@ impl AttractorParam for HalvorsenAttractor {
         HalvorsenAttractor {}
     }
 
-    fn random_point() -> Vec3A {
-        vec3a(
-            random_range(-1.0, 1.0),
-            random_range(-1.0, 1.0),
-            random_range(-1.0, 1.0),
-        )
-    }
-
     fn slope(p: Vec3A) -> Vec3A {
         MAT * p - vec3a(p.y * p.y, p.z * p.z, p.x * p.x)
     }

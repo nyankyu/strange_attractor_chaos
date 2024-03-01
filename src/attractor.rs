@@ -14,9 +14,9 @@ use crate::WINDOW_W;
 pub(crate) use param::lorenz_attractor::LorenzAttractor;
 #[allow(unused_imports)]
 pub(crate) use param::halvorsen_attractor::HalvorsenAttractor;
-/*
 #[allow(unused_imports)]
 pub(crate) use param::dadras_attractor::DadrasAttractor;
+/*
 #[allow(unused_imports)]
 pub(crate) use param::langford_attractor::LangfordAttractor;
 #[allow(unused_imports)]
@@ -56,7 +56,6 @@ pub(crate) trait AttractorParam {
     const RADIUS: f32;
 
     fn new() -> Self;
-    fn random_point() -> Vec3A;
     fn slope(p: Vec3A) -> Vec3A;
 }
 

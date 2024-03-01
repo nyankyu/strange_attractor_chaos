@@ -13,35 +13,37 @@ pub(crate) struct DadrasAttractor {}
 impl AttractorParam for DadrasAttractor {
     const ANGLE_OF_VIEW: f32 = 90.0 * (PI / 180.0);
 
-    const ORBIT_NUM: usize = 1300;
-    const ORBIT_LEN: usize = 500;
-    const ORBIT_WEIGHT: f32 = 0.6;
+    const DELTA_T: f32 = 0.0004;
 
-    const DRAW_SKIP: usize = Self::ORBIT_LEN * 5;
-
-    const DELTA_T: f32 = 0.002;
-
-    const CAMERA: Vec3A = const_vec3a!([-7.0, 0.0, 0.0]);
+    const CAMERA: Vec3A = const_vec3a!([-10.0, 0.0, 0.0]);
     const CENTER: Vec3A = const_vec3a!([4.0, 0.0, 0.0]);
 
     const DELTA_THETA: f32 = 0.0003;
 
     const ROTAION_X: f32 = 1.0;
-    const ROTAION_Y: f32 = 7.9;
-    const ROTAION_Z: f32 = 5.9;
+    const ROTAION_Y: f32 = 3.9;
+    const ROTAION_Z: f32 = 2.9;
 
-    const COLOR: Rgb8 = GOLD;
+    const LINES_LEN: usize = 5_000;
+
+    const LINE_WEIGHT: f32 = 1.7;
+
+    const COLOR_HUE1: f32 = 0.3;
+    const INIT_START_END1: (Vec3A, Vec3A) = (
+        const_vec3a!([0.5, 0.5, 0.5]),
+        const_vec3a!([1.0, 1.0, 1.0])
+    );
+
+    const COLOR_HUE2: f32 = 0.5;
+    const INIT_START_END2: (Vec3A, Vec3A) = (
+        const_vec3a!([-1.0, -1.0, 1.0]),
+        const_vec3a!([-1.0, -1.0, 1.5]),
+    );
+
+    const RADIUS: f32 = 14.0;
 
     fn new() -> Self {
         DadrasAttractor {}
-    }
-
-    fn random_point() -> Vec3A {
-        vec3a(
-            random_range(-5.0, 5.0),
-            random_range(-5.0, 5.0),
-            random_range(-5.0, 5.0),
-        )
     }
 
     fn slope(p: Vec3A) -> Vec3A {

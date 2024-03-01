@@ -37,14 +37,6 @@ impl AttractorParam for LorenzAttractor {
         LorenzAttractor {}
     }
 
-    fn random_point() -> Vec3A {
-        vec3a(
-            random_range(-30.0, 30.0),
-            random_range(-30.0, 30.0),
-            random_range(0.0, 60.0),
-        )
-    }
-
     fn slope(p: Vec3A) -> Vec3A {
         let dx = SIGMA * (p.y - p.x);
         let dy = p.x * (RHO - p.z) - p.y;
