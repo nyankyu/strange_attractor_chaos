@@ -18,13 +18,13 @@ pub(crate) use param::halvorsen_attractor::HalvorsenAttractor;
 pub(crate) use param::dadras_attractor::DadrasAttractor;
 #[allow(unused_imports)]
 pub(crate) use param::thomas_attractor::ThomasAttractor;
-/*
 #[allow(unused_imports)]
 pub(crate) use param::langford_attractor::LangfordAttractor;
 #[allow(unused_imports)]
-pub(crate) use param::lorenz84_attractor::Lorenz84Attractor;
-#[allow(unused_imports)]
 pub(crate) use param::burke_shaw_attractor::BurkeShawAttractor;
+/*
+#[allow(unused_imports)]
+pub(crate) use param::lorenz84_attractor::Lorenz84Attractor;
 */
 
 use line::Line;

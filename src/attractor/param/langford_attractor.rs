@@ -14,35 +14,32 @@ pub(crate) struct LangfordAttractor {}
 impl AttractorParam for LangfordAttractor {
     const ANGLE_OF_VIEW: f32 = 90.0 * (PI / 180.0);
 
-    const ORBIT_NUM: usize = 700;
-    const ORBIT_LEN: usize = 300;
-    const ORBIT_WEIGHT: f32 = 0.8;
+    const DELTA_T: f32 = 0.0005;
 
-    const DRAW_SKIP: usize = Self::ORBIT_LEN * 0;
-
-    const DELTA_T: f32 = 0.004;
-
-    const CAMERA: Vec3A = const_vec3a!([-1.5, 0.0, 0.0]);
+    const CAMERA: Vec3A = const_vec3a!([-1.0, 0.5, 0.0]);
     const CENTER: Vec3A = const_vec3a!([0.5, 0.5, 0.0]);
 
-    const DELTA_THETA: f32 = 0.0003;
+    const DELTA_THETA: f32 = 0.0002;
 
     const ROTAION_X: f32 = 1.0;
-    const ROTAION_Y: f32 = 7.9;
+    const ROTAION_Y: f32 = 5.9;
     const ROTAION_Z: f32 = 1.9;
 
-    const COLOR: Rgb8 = BLUEVIOLET;
+    const LINES_LEN: usize = 5_000;
+    const LINE_WEIGHT: f32 = 1.5;
+
+    const COLOR_HUE1: f32 = 0.65;
+    const INIT_START_END1: (Vec3A, Vec3A) =
+        (const_vec3a!([0.5, 0.5, 0.5]), const_vec3a!([0.2, 0.2, 0.1]));
+
+    const COLOR_HUE2: f32 = 0.05;
+    const INIT_START_END2: (Vec3A, Vec3A) =
+        (const_vec3a!([-0.5, -0.5, -0.5]), const_vec3a!([-0.4, -0.4, -0.1]));
+
+    const RADIUS: f32 = 1.5;
 
     fn new() -> Self {
         LangfordAttractor {}
-    }
-
-    fn random_point() -> Vec3A {
-        vec3a(
-            random_range(-0.5, 0.5),
-            random_range(-0.5, 0.5),
-            random_range(-0.5, 0.5),
-        )
     }
 
     fn slope(p: Vec3A) -> Vec3A {
