@@ -22,10 +22,8 @@ pub(crate) use param::thomas_attractor::ThomasAttractor;
 pub(crate) use param::langford_attractor::LangfordAttractor;
 #[allow(unused_imports)]
 pub(crate) use param::burke_shaw_attractor::BurkeShawAttractor;
-/*
 #[allow(unused_imports)]
 pub(crate) use param::lorenz84_attractor::Lorenz84Attractor;
-*/
 
 use line::Line;
 

@@ -12,35 +12,31 @@ pub(crate) struct Lorenz84Attractor {}
 impl AttractorParam for Lorenz84Attractor {
     const ANGLE_OF_VIEW: f32 = 100.0 / 180.0 * PI;
 
-    const ORBIT_NUM: usize = 900;
-    const ORBIT_LEN: usize = 200;
-    const ORBIT_WEIGHT: f32 = 0.7;
+    const DELTA_T: f32 = 0.0003;
 
-    const DRAW_SKIP: usize = Self::ORBIT_LEN * 200;
-
-    const DELTA_T: f32 = 0.003;
-
-    const CAMERA: Vec3A = const_vec3a!([-2.0, 1.2, 0.0]);
-    const CENTER: Vec3A = const_vec3a!([1.0, 1.5, 0.0]);
+    const CAMERA: Vec3A = const_vec3a!([-1.7, 0.0, 0.0]);
+    const CENTER: Vec3A = const_vec3a!([1.0, 0.0, 0.0]);
 
     const DELTA_THETA: f32 = 0.0003;
 
     const ROTAION_X: f32 = -1.3;
-    const ROTAION_Y: f32 = -7.9;
+    const ROTAION_Y: f32 = -4.9;
     const ROTAION_Z: f32 = 1.0;
 
-    const COLOR: Rgb8 = DEEPPINK;
+    const LINES_LEN: usize = 5_000;
+
+    const LINE_WEIGHT: f32 = 1.9;
+
+    const COLOR_HUE1: f32 = 0.07;
+    const INIT_START_END1: (Vec3A, Vec3A) = (const_vec3a!([1.0, 1.0, 1.0]), const_vec3a!([0.5, 0.5, 0.5]));
+
+    const COLOR_HUE2: f32 = 0.5;
+    const INIT_START_END2: (Vec3A, Vec3A) = (const_vec3a!([1.0, -1.0, 2.0]), const_vec3a!([-0.5, 1.5, 0.5]));
+
+    const RADIUS: f32 = 2.5;
 
     fn new() -> Self {
         Lorenz84Attractor {}
-    }
-
-    fn random_point() -> Vec3A {
-        vec3a(
-            random_range(0.0, 3.0),
-            random_range(-3.0, 3.0),
-            random_range(0.0, 3.0),
-        )
     }
 
     fn slope(p: Vec3A) -> Vec3A {
