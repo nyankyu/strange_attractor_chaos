@@ -5,7 +5,7 @@ use nannou::prelude::*;
 use attractor::*;
 
 const RECORDING: bool = true;
-const MINUTES_MAX: u64 = 3;
+const MINUTES_MAX: u64 = 4;
 
 const WINDOW_H: u32 = if RECORDING { 2160 } else { 800 };
 const WINDOW_W: u32 = if RECORDING { 3840 } else { 1422 };
@@ -19,7 +19,7 @@ fn main() {
 
 struct Model {
     window_id: WindowId,
-    attractor: Attractor<DadrasAttractor>,
+    attractor: Attractor<ThomasAttractor>,
 }
 
 fn model(app: &App) -> Model {
